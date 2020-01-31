@@ -1,9 +1,9 @@
 import React from 'react'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import Login from './Login'
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div>
             <h1>Super Smash Hub</h1>
@@ -11,7 +11,7 @@ const Home = () => {
                 <p>Smash</p>
             </Link>
             <h3>Login</h3>
-            <Route exact path="/" component={Login}/>
+            <Login {...props}/>
         </div>
     )
 }

@@ -16,7 +16,7 @@ const Login = (props) => {
         axiosWithAuth()
             .get(`${username}`)
             .then(res => {
-                
+                console.log(res)
                 localStorage.setItem('username', username)
                 setLoading(false)
                 props.history.push('/smash')
@@ -24,7 +24,7 @@ const Login = (props) => {
             .catch(err => {
                 console.log(err)
                 setLoading(false)
-                // setError(err.response.data.message)
+                setError(err.response.data.message)
             })
     }
     
@@ -39,7 +39,7 @@ const Login = (props) => {
                 onChange={handleChange}
                 />
                 {error ? <p>{error}</p> : null}
-                <button>Start</button>
+                <button>Login</button>
             </form>
         </div>
     )
