@@ -1,16 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-const Login = () => {
+const Login = (props) => {
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
+    const [username, setUsername] = useState('')
+
+    const handleChange = event => {
+        setUsername(event.target.value)
+    }
+    const login = event => {
+        event.preventDefault();
+        setLoading(true)
+
+        axiosWithAuth()
+            .get(`${username}`)
+            .then(res => {
+                
+                localStorage.setItem('username', username)
+                setLoading(false)
+                props.history.push('/smash')
+            })
+            .catch(err => {
+                console.log(err)
+                setLoading(false)
+                // setError(err.response.data.message)
+            })
+    }
+    
     return (
         <div>
-            <form>
+            <form onSubmit={login}>
                 <input
                 type="text"
                 placeholder="username"
+                value={username}
+                name="username"
+                onChange={handleChange}
                 />
+                {error ? <p>{error}</p> : null}
+                <button>Start</button>
             </form>
         </div>
     )
 }
 
-export const Login;
+export default Login;
