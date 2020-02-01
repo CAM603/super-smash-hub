@@ -5,7 +5,16 @@ import Stats from './Stats';
 const UpperDisplay = (props) => {
     return (
         <div>
-            // If not fighting: Board for followers. Else: Battle scene
+            <div style={{display: 'flex', justifyContent: 'space-around'}}>
+                <div>
+                    <p>Back</p>
+                </div>
+                <div style={{display: 'flex'}}>
+                    <p onClick={() => props.prevPage()}>Prev</p>
+                    <h2>Followers Battle</h2>
+                    <p onClick={() => props.nextPage()}>Next</p>
+                </div>
+            </div>
             <div style={{minHeight: '400px'}}>
                 <Followers
                 followers={props.followers}

@@ -72,6 +72,8 @@ const SmashPage = (props) => {
             followers={followers}
             loading={loading}
             changePlayer2={changePlayer2}
+            prevPage={prevPage}
+            nextPage={nextPage}
             />
             <LowerDisplay 
             player1={player1}
