@@ -9,6 +9,7 @@ const Followers = (props) => {
             props.followers.map(follower => (
                 <Follower 
                 follower={follower}
+                changePlayer2={props.changePlayer2}
                 />
             ))
         }

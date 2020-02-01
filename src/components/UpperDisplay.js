@@ -10,6 +10,7 @@ const UpperDisplay = (props) => {
                 <Followers
                 followers={props.followers}
                 loading={props.loading}
+                changePlayer2={props.changePlayer2}
                 />
                 <Stats />
             </div>
