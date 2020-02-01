@@ -3,9 +3,8 @@ import { Route } from 'react-router-dom';
 
 import './App.css';
 import PrivateRoute from './components/PrivateRoute';
-import Smash from './components/Smash';
+import SmashPage from './components/SmashPage';
 import Home from './components/Home';
-import Login from './components/Login';
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
       />
       <PrivateRoute 
       exact path="/smash" 
-      component={Smash}
+      component={SmashPage}
       />
     </div>
   );

@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 
-const Smash = (props) => {
+import UpperDisplay from './UpperDisplay';
+import LowerDisplay from './LowerDisplay';
+
+const SmashPage = (props) => {
     let username = localStorage.getItem('username')
     const [player1, setPlayer1] = useState({})
     const [player2, setPlayer2] = useState({})
@@ -65,19 +68,12 @@ const Smash = (props) => {
 
     return (
         <div>
-            <div>{followers.map(follower => (
-                <p onClick={() => changePlayer2(follower.login)}>{follower.login}</p>
-            ))}</div>
-            <h1>{player1.login}</h1>
-            <h1>{player2.login}</h1>
-            <button onClick={() => {
-                props.history.push("/")
-                localStorage.removeItem('username')
-                }}>LOGOUT</button>
-            <button onClick={() => prevPage()}>Prev</button>
-            <button onClick={() => nextPage()}>Next</button>
+            <UpperDisplay 
+            followers={followers}
+            />
+            <LowerDisplay />
         </div>
     )
 }
 
-export default Smash;
+export default SmashPage;
