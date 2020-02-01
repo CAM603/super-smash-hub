@@ -1,5 +1,6 @@
 import React from 'react';
 import Followers from './Followers';
+import Stats from './Stats';
 
 const UpperDisplay = (props) => {
     return (
@@ -9,8 +10,8 @@ const UpperDisplay = (props) => {
                 <Followers
                 followers={props.followers}
                 />
+                <Stats />
             </div>
-            <h1>Upper Display</h1>
         </div>
     )
 }
