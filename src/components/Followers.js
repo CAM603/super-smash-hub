@@ -4,11 +4,14 @@ import Follower from './Follower';
 const Followers = (props) => {
     return (
         <div>
-            {props.followers.map(follower => (
+            {props.loading ? <p style={{color:'red'}}>Loading</p>
+            :
+            props.followers.map(follower => (
                 <Follower 
                 follower={follower}
                 />
-            ))}
+            ))
+        }
         </div>
     )
 }

@@ -70,6 +70,7 @@ const SmashPage = (props) => {
         <div>
             <UpperDisplay 
             followers={followers}
+            loading={loading}
             />
             <LowerDisplay />
         </div>

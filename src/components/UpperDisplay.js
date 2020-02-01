@@ -9,6 +9,7 @@ const UpperDisplay = (props) => {
             <div style={{minHeight: '400px'}}>
                 <Followers
                 followers={props.followers}
+                loading={props.loading}
                 />
                 <Stats />
             </div>
