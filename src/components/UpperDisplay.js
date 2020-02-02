@@ -3,11 +3,16 @@ import Followers from './Followers';
 import Stats from './Stats';
 
 const UpperDisplay = (props) => {
+    
+    const logOut = () => {
+        localStorage.removeItem('username');
+        props.history.push('/')
+    }
     return (
         <div>
             <div style={{display: 'flex', justifyContent: 'space-around'}}>
                 <div>
-                    <p>Back</p>
+                    <p onClick={() => logOut()}>Back</p>
                 </div>
                 <div style={{display: 'flex'}}>
                     <p onClick={() => props.prevPage()}>Prev</p>
@@ -18,7 +23,10 @@ const UpperDisplay = (props) => {
             <div style={{minHeight: '400px'}}>
                 {props.fighting 
                     ?
-                    <Stats />
+                    <Stats 
+                    player1={props.player1}
+                    player2={props.player2}
+                    />
                     :
                     <Followers
                     followers={props.followers}
@@ -26,6 +34,7 @@ const UpperDisplay = (props) => {
                     changePlayer2={props.changePlayer2}
                     />
                 }
+                <p onClick={() => props.setFighting(!props.fighting)}>Hi</p>
             </div>
         </div>
     )

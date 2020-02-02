@@ -25,7 +25,8 @@ const SmashPage = (props) => {
             .then(res => {
                 setLoading(false)
                 setFollowers(res.data)
-                setPlayer2(res.data[0])
+                // Cant set data to player 2 without getting specific players info
+                // setPlayer2(res.data[0])
             })
             .catch(err => console.log(err))
     }, [])
@@ -76,6 +77,10 @@ const SmashPage = (props) => {
             prevPage={prevPage}
             nextPage={nextPage}
             fighting={fighting}
+            setFighting={setFighting}
+            player1={player1}
+            player2={player2}
+            {...props}
             />
             <LowerDisplay 
             player1={player1}

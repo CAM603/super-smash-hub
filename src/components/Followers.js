@@ -7,7 +7,8 @@ const Followers = (props) => {
             {props.loading ? <p style={{color:'red'}}>Loading</p>
             :
             props.followers.map(follower => (
-                <Follower 
+                <Follower
+                key={follower.login}
                 follower={follower}
                 changePlayer2={props.changePlayer2}
                 />
