@@ -11,6 +11,7 @@ const SmashPage = (props) => {
     const [followers, setFollowers] = useState([])
     const [loading, setLoading] = useState(false)
     const [page, setPage] = useState(1)
+    const [fighting, setFighting] = useState(false)
 
     useEffect(() => {
         setLoading(true)
@@ -74,6 +75,7 @@ const SmashPage = (props) => {
             changePlayer2={changePlayer2}
             prevPage={prevPage}
             nextPage={nextPage}
+            fighting={fighting}
             />
             <LowerDisplay 
             player1={player1}

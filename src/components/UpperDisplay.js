@@ -16,12 +16,16 @@ const UpperDisplay = (props) => {
                 </div>
             </div>
             <div style={{minHeight: '400px'}}>
-                <Followers
-                followers={props.followers}
-                loading={props.loading}
-                changePlayer2={props.changePlayer2}
-                />
-                <Stats />
+                {props.fighting 
+                    ?
+                    <Stats />
+                    :
+                    <Followers
+                    followers={props.followers}
+                    loading={props.loading}
+                    changePlayer2={props.changePlayer2}
+                    />
+                }
             </div>
         </div>
     )
