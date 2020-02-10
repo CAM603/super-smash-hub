@@ -8,6 +8,14 @@ const UpperDisplay = (props) => {
         localStorage.removeItem('username');
         props.history.push('/')
     }
+
+    const battle = () => {
+        if(props.player2.login) {
+            props.setFighting(!props.fighting)
+        } else {
+            alert('No player 2 selected')
+        }
+    }
     return (
         <div>
             <div style={{display: 'flex', justifyContent: 'space-around'}}>
@@ -34,7 +42,7 @@ const UpperDisplay = (props) => {
                     changePlayer2={props.changePlayer2}
                     />
                 }
-                <p onClick={() => props.setFighting(!props.fighting)}>Hi</p>
+                <p onClick={battle}>Hi</p>
             </div>
         </div>
     )
