@@ -38,7 +38,7 @@ const Login = (props) => {
                 name="username"
                 onChange={handleChange}
                 />
-                {error ? <p>{error}</p> : null}
+                {error ? <p>Username {error}</p> : null}
                 <button>Login</button>
             </form>
         </div>

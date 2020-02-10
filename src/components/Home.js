@@ -7,10 +7,7 @@ const Home = (props) => {
     return (
         <div>
             <h1>Super Smash Hub</h1>
-            <Link to="/smash">
-                <p>Smash</p>
-            </Link>
-            <h3>Login</h3>
+            <h3>Enter Your GitHub Username</h3>
             <Login {...props}/>
         </div>
     )

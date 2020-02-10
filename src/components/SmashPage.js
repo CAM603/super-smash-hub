@@ -23,7 +23,9 @@ const SmashPage = (props) => {
                 return axiosWithAuth().get(`/${username}/followers?page=1`)
             })
             .then(res => {
-                setLoading(false)
+                setTimeout(() => {
+                    setLoading(false)
+                }, 500)
                 setFollowers(res.data)
                 // Cant set data to player 2 without getting specific players info
                 // setPlayer2(res.data[0])
@@ -70,6 +72,8 @@ const SmashPage = (props) => {
 
     return (
         <div>
+            {loading ? <h1>Loading...</h1> :
+            <>
             <UpperDisplay 
             followers={followers}
             loading={loading}
@@ -86,6 +90,8 @@ const SmashPage = (props) => {
             player1={player1}
             player2={player2}
             />
+            </>
+            }
         </div>
     )
 }
