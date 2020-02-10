@@ -4,7 +4,7 @@ import PlayerTwo from './PlayerTwo';
 
 const LowerDisplay = ({player1, player2}) => {
     return (
-        <div>
+        <div style={{display: 'flex', justifyContent: 'center', border: 'solid black 3px'}}>
             <PlayerOne 
             player1={player1}
             />
