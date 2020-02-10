@@ -70,6 +70,15 @@ const SmashPage = (props) => {
         }
     }
 
+    const randomPlayer2 = () => {
+        //TODO Make a real random function 
+        let randomPlayer = followers[0].login
+        axiosWithAuth()
+        .get(`/${randomPlayer}`)
+        .then(res => setPlayer2(res.data))
+        .catch(err => console.log(err))
+    }
+    
     return (
         <div>
             {loading ? <h1>Loading...</h1> :
@@ -86,9 +95,10 @@ const SmashPage = (props) => {
             player2={player2}
             {...props}
             />
-            <LowerDisplay 
+            <LowerDisplay
             player1={player1}
             player2={player2}
+            randomPlayer2={randomPlayer2}
             />
             </>
             }
