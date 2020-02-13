@@ -71,8 +71,8 @@ const SmashPage = (props) => {
     }
 
     const randomPlayer2 = () => {
-        //TODO Make a real random function 
-        let randomPlayer = followers[0].login
+        let randomNumber =  Math.floor(Math.random() * followers.length - 1);
+        let randomPlayer = followers[randomNumber].login
         axiosWithAuth()
         .get(`/${randomPlayer}`)
         .then(res => setPlayer2(res.data))
