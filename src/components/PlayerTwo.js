@@ -11,7 +11,7 @@ const PlayerTwo = (props) => {
         username = <h3>{props.player2.login}</h3>
     } else {
         pic = questionMark;
-        username = <h3 onClick={props.randomPlayer2}>Random</h3>
+        username = <h3>None</h3>
     }
     return (
         <>

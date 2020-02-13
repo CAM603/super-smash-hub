@@ -1,5 +1,6 @@
 import React from 'react';
 import Follower from './Follower';
+import RandomFollower from './RandomFollower';
 
 const Followers = (props) => {
     return (
@@ -11,6 +12,9 @@ const Followers = (props) => {
                 changePlayer2={props.changePlayer2}
                 />
             ))}
+            <RandomFollower
+            randomPlayer2={props.randomPlayer2}
+            />
         </div>
     )
 }

@@ -93,12 +93,12 @@ const SmashPage = (props) => {
             setFighting={setFighting}
             player1={player1}
             player2={player2}
+            randomPlayer2={randomPlayer2}
             {...props}
             />
             <LowerDisplay
             player1={player1}
             player2={player2}
-            randomPlayer2={randomPlayer2}
             />
             </>
             }
