@@ -26,6 +26,7 @@ const UpperDisplay = (props) => {
                     <p onClick={() => props.prevPage()}>Prev</p>
                     <h2>Followers Battle</h2>
                     <p onClick={() => props.nextPage()}>Next</p>
+                    <p onClick={battle}>Hi</p>
                 </div>
             </div>
             <div style={{minHeight: '400px'}}>
@@ -43,7 +44,7 @@ const UpperDisplay = (props) => {
                     changePlayer2={props.changePlayer2}
                     />
                 }
-                <p onClick={battle}>Hi</p>
+                
             </div>
         </div>
     )

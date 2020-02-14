@@ -1,4 +1,6 @@
 import React from 'react';
+import { Card, CardBody, Button, CardTitle, CardText, CardImg } from 'reactstrap';
+
 
 let questionMark = require('../images/Question.png')
 
@@ -14,14 +16,17 @@ const PlayerTwo = (props) => {
         username = <h3>None</h3>
     }
     return (
-        <>
-            <img 
-            style={{width: '100px'}} 
-            src={pic} 
-            />
-            {username}
-            <h3>Player 2</h3>
-        </>
+        <div style={{width: '300px'}}>
+            <Card>
+                <CardImg src={pic}/>
+                <CardBody>
+                    {username}
+                    <h3>Player 2</h3>
+                    <h3>P2</h3>
+                </CardBody>
+            </Card>
+            
+        </div>
     )
 }
 
