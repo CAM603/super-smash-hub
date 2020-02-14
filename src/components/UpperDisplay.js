@@ -34,7 +34,7 @@ const UpperDisplay = (props) => {
                     <p onClick={battle}>Hi</p>
                 </div>
             </div>
-            <div style={{minHeight: '400px'}}>
+            <div style={{maxHeight: '400px'}}>
                 
                     <Modal isOpen={modal} toggle={toggle}>
                         <ModalBody>
