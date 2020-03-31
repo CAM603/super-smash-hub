@@ -12,10 +12,10 @@ const PlayerTwo = (props) => {
         username = <h3>{props.player2.login}</h3>
     } else {
         pic = questionMark;
-        username = <h3>Select a user</h3>
+        username = <h3>?</h3>
     }
     return (
-        <div style={{width: '300px'}}>
+        <div className="player-card">
             <Card>
                 <CardImg src={pic}/>
                 <CardBody>
@@ -24,7 +24,6 @@ const PlayerTwo = (props) => {
                     <h3>P2</h3>
                 </CardBody>
             </Card>
-            
         </div>
     )
 }

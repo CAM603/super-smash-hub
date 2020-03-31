@@ -85,26 +85,26 @@ const SmashPage = (props) => {
     return (
         <div className="smash-container">
             {loading ? <h1>Loading...</h1> :
-            <>
-            <UpperDisplay 
-                followers={followers}
-                loading={loading}
-                setLoading={setLoading}
-                changePlayer2={changePlayer2}
-                prevPage={prevPage}
-                nextPage={nextPage}
-                fighting={fighting}
-                setFighting={setFighting}
-                player1={player1}
-                player2={player2}
-                randomPlayer2={randomPlayer2}
-                {...props}
-            />
-            <LowerDisplay
-                player1={player1}
-                player2={player2}
-            />
-            </>
+                <>
+                    <UpperDisplay 
+                        followers={followers}
+                        loading={loading}
+                        setLoading={setLoading}
+                        changePlayer2={changePlayer2}
+                        prevPage={prevPage}
+                        nextPage={nextPage}
+                        fighting={fighting}
+                        setFighting={setFighting}
+                        player1={player1}
+                        player2={player2}
+                        randomPlayer2={randomPlayer2}
+                        {...props}
+                    />
+                    <LowerDisplay
+                        player1={player1}
+                        player2={player2}
+                    />
+                </>
             }
         </div>
     )

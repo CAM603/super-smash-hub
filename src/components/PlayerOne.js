@@ -1,13 +1,13 @@
 import React from 'react';
-import { Card, CardBody, Button, CardTitle, CardText, CardImg } from 'reactstrap';
+import { Card, CardBody, CardImg } from 'reactstrap';
 
 
 const PlayerOne = (props) => {
     
     return (
-        <div style={{width: '300px'}}>
+        <div className="player-card">
             <Card>
-                <CardImg top width="100%"  src={props.player1.avatar_url} />
+                <CardImg src={props.player1.avatar_url} />
                 <CardBody>
                     <h3>{props.player1.login}</h3>
                     <h3>Player 1</h3>

@@ -5,7 +5,7 @@ import RandomFollower from './RandomFollower';
 const Followers = (props) => {
     
     return (
-        <div>
+        <div className="followers-container">
             {props.followers.map(follower => (
                 <Follower
                     key={follower.login}

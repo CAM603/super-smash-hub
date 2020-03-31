@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-let questionMark = require('../images/Question.png')
+import { Spinner } from 'reactstrap';
 
 const Follower = ({follower, changePlayer2}) => {
     const [loading, setLoading] = useState(true);
@@ -8,13 +7,13 @@ const Follower = ({follower, changePlayer2}) => {
 
     return (
         <>
-            <img
-                onLoad={() => setLoading(false)}
-                onClick={() => changePlayer2(follower.login)}
-                style={{width: '100px'}} 
-                src={!loading ? follower.avatar_url : questionMark}            
-            />
-            
+        {loading ? <Spinner color="primary"/> : null}
+        <img
+            onLoad={() => setLoading(false)}
+            onClick={() => changePlayer2(follower.login)}
+            style={{width: '100px'}} 
+            src={follower.avatar_url}            
+        />
         </>
     )
 }
