@@ -39,16 +39,16 @@ const UpperDisplay = (props) => {
                     <Modal isOpen={modal} toggle={toggle}>
                         <ModalBody>
                             <Stats 
-                            player1={props.player1}
-                            player2={props.player2}
+                                player1={props.player1}
+                                player2={props.player2}
                             />
                         </ModalBody>
                     </Modal>
                     <Followers
-                    randomPlayer2={props.randomPlayer2}
-                    followers={props.followers}
-                    loading={props.loading}
-                    changePlayer2={props.changePlayer2}
+                        randomPlayer2={props.randomPlayer2}
+                        followers={props.followers}
+                        loading={props.loading}
+                        changePlayer2={props.changePlayer2}
                     />
                 
                 

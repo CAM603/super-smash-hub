@@ -10,13 +10,13 @@ function App() {
   return (
     <div className="App">
       <Route exact path="/"
-      render={props => {
-        return <Home {...props}/>
+        render={props => {
+          return <Home {...props}/>
       }}
       />
       <PrivateRoute 
-      exact path="/smash" 
-      component={SmashPage}
+        exact path="/smash" 
+        component={SmashPage}
       />
     </div>
   );

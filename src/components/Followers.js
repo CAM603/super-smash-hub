@@ -7,13 +7,13 @@ const Followers = (props) => {
         <div>
             {props.followers.map(follower => (
                 <Follower
-                key={follower.login}
-                follower={follower}
-                changePlayer2={props.changePlayer2}
+                    key={follower.login}
+                    follower={follower}
+                    changePlayer2={props.changePlayer2}
                 />
             ))}
             <RandomFollower
-            randomPlayer2={props.randomPlayer2}
+                randomPlayer2={props.randomPlayer2}
             />
         </div>
     )

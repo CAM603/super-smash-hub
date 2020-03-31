@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, CardBody, Button, CardTitle, CardText, CardImg } from 'reactstrap';
 
-
 let questionMark = require('../images/Question.png')
 
 const PlayerTwo = (props) => {
@@ -13,7 +12,7 @@ const PlayerTwo = (props) => {
         username = <h3>{props.player2.login}</h3>
     } else {
         pic = questionMark;
-        username = <h3>None</h3>
+        username = <h3>Select a user</h3>
     }
     return (
         <div style={{width: '300px'}}>

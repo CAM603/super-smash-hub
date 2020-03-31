@@ -27,19 +27,18 @@ const SmashPage = (props) => {
                     setLoading(false)
                 }, 500)
                 setFollowers(res.data)
-                // Cant set data to player 2 without getting specific players info
-                // setPlayer2(res.data[0])
             })
             .catch(err => console.log(err))
     }, [])
+
     
     const changePlayer2 = (player) => {
         axiosWithAuth()
-        .get(`/${player}`)
-        .then(res => {
-            setPlayer2(res.data)
-        })
-        .catch(err => console.log(err))
+            .get(`/${player}`)
+            .then(res => {
+                setPlayer2(res.data)
+            })
+            .catch(err => console.log(err))
     }
 
     const nextPage = () => {
@@ -50,7 +49,7 @@ const SmashPage = (props) => {
                 setFollowers(res.data)
                 setPage(page + 1)
             } else {
-                console.log('No more friends')
+                alert('No more friends')
             }
         })
         .catch(err => console.log(err))
@@ -66,17 +65,23 @@ const SmashPage = (props) => {
             })
             .catch(err => console.log(err))
         } else {
-            console.log('Noooooo')
+            alert('None that way')
         }
     }
 
     const randomPlayer2 = () => {
+        if(followers.length < 1) {
+            alert('User has no followers')
+            return
+        }
         let randomNumber =  Math.floor(Math.random() * followers.length - 1);
         let randomPlayer = followers[randomNumber].login
         axiosWithAuth()
-        .get(`/${randomPlayer}`)
-        .then(res => setPlayer2(res.data))
-        .catch(err => console.log(err))
+            .get(`/${randomPlayer}`)
+            .then(res => {
+                setPlayer2(res.data)
+            })
+            .catch(err => console.log(err))
     }
     
     return (
@@ -89,21 +94,21 @@ const SmashPage = (props) => {
             {loading ? <h1>Loading...</h1> :
             <>
             <UpperDisplay 
-            followers={followers}
-            loading={loading}
-            changePlayer2={changePlayer2}
-            prevPage={prevPage}
-            nextPage={nextPage}
-            fighting={fighting}
-            setFighting={setFighting}
-            player1={player1}
-            player2={player2}
-            randomPlayer2={randomPlayer2}
-            {...props}
+                followers={followers}
+                loading={loading}
+                changePlayer2={changePlayer2}
+                prevPage={prevPage}
+                nextPage={nextPage}
+                fighting={fighting}
+                setFighting={setFighting}
+                player1={player1}
+                player2={player2}
+                randomPlayer2={randomPlayer2}
+                {...props}
             />
             <LowerDisplay
-            player1={player1}
-            player2={player2}
+                player1={player1}
+                player2={player2}
             />
             </>
             }
