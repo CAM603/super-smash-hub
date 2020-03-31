@@ -5,9 +5,8 @@ import Login from './Login'
 
 const Home = (props) => {
     return (
-        <div>
+        <div className="home-container">
             <h1>Super Smash Hub</h1>
-            <h3>Enter Your GitHub Username</h3>
             <Login {...props}/>
         </div>
     )

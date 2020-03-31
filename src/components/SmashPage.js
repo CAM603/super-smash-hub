@@ -83,12 +83,7 @@ const SmashPage = (props) => {
     }
     
     return (
-        <div style={{
-            height: '100vh',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between'
-            }}>
+        <div className="smash-container">
             {loading ? <h1>Loading...</h1> :
             <>
             <UpperDisplay 

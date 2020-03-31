@@ -1,8 +1,39 @@
 .App {
   text-align: center;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+.modal-dialog {
+  max-width: 90% !important;
+  margin: 3.75rem auto;
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
 
-  .modal-dialog {
-      max-width: 100% !important;
-      margin: 1.75rem auto;
+  h1 {
+    padding: 20px;
   }
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 30px;
+  background-color: blueviolet;
+}
+.smash-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

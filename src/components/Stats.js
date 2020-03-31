@@ -21,6 +21,7 @@ const Stats = (props) => {
                         onLoad={() => setP1Loading(false)}
                     />
                 </div>
+
                 <div>
                     <p>{props.player2.login}</p>                
                     <img style={{width: "200px"}} src={props.player2.avatar_url}/>
@@ -35,6 +36,7 @@ const Stats = (props) => {
                         onLoad={() => setP2Loading(false)}
                     />
                 </div>
+                
         </div>
         
     )

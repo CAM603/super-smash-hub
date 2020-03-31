@@ -24,7 +24,8 @@ const Login = (props) => {
     }
     
     return (
-        <div>
+        <div className="login-container">
+            <h3>Enter Your GitHub Username</h3>
             <form onSubmit={login}>
                 <input
                 type="text"
