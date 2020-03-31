@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
-let questionMark = require('../images/Question.png')
+import { Spinner } from 'reactstrap';
 
 const Stats = (props) => {
     const [p1Loading, setP1Loading] = useState(true)
@@ -14,8 +13,10 @@ const Stats = (props) => {
                     <p>Followers: {props.player1.followers}</p>
                     <p>Following: {props.player1.following}</p>
                     <p>Public Repos: {props.player1.public_repos}</p>
+                    {p1Loading ? <Spinner color="primary" /> : null
+                    }
                     <img 
-                        src={!p1Loading && !p2Loading ? `http://ghchart.rshah.org/${props.player1.login}` : questionMark} 
+                        src={`http://ghchart.rshah.org/${props.player1.login}`} 
                         alt={`${props.player1.login}'s Github chart`}
                         onLoad={() => setP1Loading(false)}
                     />
@@ -26,8 +27,10 @@ const Stats = (props) => {
                     <p>Followers: {props.player2.followers}</p>
                     <p>Following: {props.player2.following}</p>
                     <p>Public Repos: {props.player2.public_repos}</p>
+                    {p2Loading ? <Spinner color="primary" /> : null
+                    }
                     <img 
-                        src={!p2Loading && !p1Loading ? `http://ghchart.rshah.org/${props.player2.login}` : questionMark} 
+                        src={`http://ghchart.rshah.org/${props.player2.login}`} 
                         alt={`${props.player2.login}'s Github chart`}
                         onLoad={() => setP2Loading(false)}
                     />

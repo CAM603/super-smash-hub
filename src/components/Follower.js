@@ -4,6 +4,7 @@ let questionMark = require('../images/Question.png')
 
 const Follower = ({follower, changePlayer2}) => {
     const [loading, setLoading] = useState(true);
+    
 
     return (
         <>

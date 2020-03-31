@@ -48,6 +48,7 @@ const UpperDisplay = (props) => {
                         randomPlayer2={props.randomPlayer2}
                         followers={props.followers}
                         loading={props.loading}
+                        setLoading={props.setLoading}
                         changePlayer2={props.changePlayer2}
                     />
                 

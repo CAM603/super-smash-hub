@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import './App.css';
+import './App.scss';
 import PrivateRoute from './components/PrivateRoute';
 import SmashPage from './components/SmashPage';
 import Home from './components/Home';

@@ -9,12 +9,11 @@ const SmashPage = (props) => {
     const [player1, setPlayer1] = useState({})
     const [player2, setPlayer2] = useState({})
     const [followers, setFollowers] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [page, setPage] = useState(1)
     const [fighting, setFighting] = useState(false)
 
     useEffect(() => {
-        setLoading(true)
         axiosWithAuth()
             .get(`/${username}`)
             .then(res => {
@@ -23,10 +22,9 @@ const SmashPage = (props) => {
                 return axiosWithAuth().get(`/${username}/followers?page=1`)
             })
             .then(res => {
-                setTimeout(() => {
-                    setLoading(false)
-                }, 500)
+                
                 setFollowers(res.data)
+                return setLoading(false)
             })
             .catch(err => console.log(err))
     }, [])
@@ -96,6 +94,7 @@ const SmashPage = (props) => {
             <UpperDisplay 
                 followers={followers}
                 loading={loading}
+                setLoading={setLoading}
                 changePlayer2={changePlayer2}
                 prevPage={prevPage}
                 nextPage={nextPage}
